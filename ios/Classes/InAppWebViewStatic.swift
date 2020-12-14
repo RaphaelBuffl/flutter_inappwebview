@@ -41,7 +41,7 @@ class InAppWebViewStatic: NSObject, FlutterPlugin {
     
     static public func getDefaultUserAgent(completionHandler: @escaping (_ value: String?) -> Void) {
         if defaultUserAgent == nil {
-            InAppWebViewStatic.webViewForUserAgent = WKWebView()
+            InAppWebViewStatic.webViewForUserAgent = RichEditorWebView()
             InAppWebViewStatic.webViewForUserAgent?.evaluateJavaScript("navigator.userAgent") { (value, error) in
 
                 if error != nil {
