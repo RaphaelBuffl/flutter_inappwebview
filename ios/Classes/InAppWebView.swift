@@ -913,6 +913,12 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate, WKNavi
         super.init(coder: aDecoder)!
     }
 
+    public var accessoryView: UIView?
+    
+    public override var inputAccessoryView: UIView? {
+        return accessoryView
+    }
+
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
@@ -3169,11 +3175,5 @@ if(window.\(JAVASCRIPT_BRIDGE_NAME)[\(_callHandlerID)] != null) {
         print("InAppWebView - dealloc")
     }
     
-//    var accessoryView: UIView?
-//
-//    // https://stackoverflow.com/a/58001395/4637638
-//    public override var inputAccessoryView: UIView? {
-//        // remove/replace the default accessory view
-//        return accessoryView
-//    }
+   
 }
